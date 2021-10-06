@@ -1,0 +1,63 @@
+<html>
+
+<head>
+    <title>Color Detector</title>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <style>
+        body {
+            background: url('https://images.unsplash.com/photo-1579546929518-9e396f3cc809?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=870&q=80');
+            background-repeat: no-repeat;
+            background-size: cover;
+        }
+
+        h2 {
+            color: white;
+        }
+
+        p {
+            color: white;
+        }
+    </style>
+</head>
+
+<body>
+    <h2>Color Detector Based on Wavelength</h2>
+
+    <input id="waveLength">
+    <button onclick="color()">check</button>
+
+    <p>What color is it?</p>
+    <p id="color"></p>
+
+    <script>
+        function color() {
+            waveLength = document.getElementById("waveLength").value;
+            if (waveLength >= 380 && waveLength < 450) {
+                document.getElementById("color").innerHTML = "The color is Violet";
+            }
+            else if (waveLength >= 450 && waveLength < 495) {
+                document.getElementById("color").innerHTML = "The color is Blue";
+            }
+            else if (waveLength >= 495 && waveLength < 570) {
+                document.getElementById("color").innerHTML = "The color is Green";
+            }
+            else if (waveLength >= 570 && waveLength < 590) {
+                document.getElementById("color").innerHTML = "The color is Yellow";
+            }
+            else if (waveLength >= 590 && waveLength < 620) {
+                document.getElementById("color").innerHTML = "The color is Orange";
+            }
+            else if (waveLength >= 620 && waveLength < 750) {
+                document.getElementById("color").innerHTML = "The color is Red";
+            }
+            else {
+                document.getElementById("color").innerHTML = "The entered wavelength is not a part of the visible spectrum";
+            }
+        }
+    </script>
+</body>
+
+</html>
